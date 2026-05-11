@@ -1,0 +1,15 @@
+# 忽略 Node.js 相關檔案
+node_modules/
+
+# 忽略 IDE 設定
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 忽略 OS 產生的暫存檔
+.DS_Store
+Thumbs.db
+
+# 忽略 git 本身的暫存檔
+.git/
