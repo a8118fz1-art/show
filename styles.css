@@ -907,7 +907,8 @@ body {
 .hamburger-menu {
     display: none;
     background: transparent;
-    border: none;
+    border: 2px solid var(--primary-color);
+    border-radius: 6px;
     cursor: pointer;
     padding: 0.5rem;
     z-index: 1001;
@@ -915,15 +916,26 @@ body {
     gap: 4px;
     width: 32px;
     height: 24px;
+    align-items: center;
+    justify-content: center;
 }
 
 .hamburger-menu span {
     display: block;
     width: 100%;
     height: 2px;
-    background: var(--text-dark);
+    background: var(--primary-color);
     border-radius: 2px;
     transition: all 0.3s ease;
+}
+
+/* 漢堡選單按鈕 hover 效果 */
+.hamburger-menu:hover {
+    background: rgba(37, 99, 235, 0.1);
+}
+
+.hamburger-menu:hover span {
+    background: var(--primary-color);
 }
 
 .hamburger-menu.open span:nth-child(1) {
