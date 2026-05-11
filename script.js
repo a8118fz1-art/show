@@ -159,11 +159,43 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
+// 漢堡選單點擊事件
+const hamburgerMenu = document.getElementById('hamburgerMenu');
+if (hamburgerMenu) {
+    hamburgerMenu.addEventListener('click', function() {
+        const navMenu = document.querySelector('.nav-menu');
+        if (navMenu) {
+            navMenu.classList.toggle('open');
+            this.classList.toggle('open');
+        }
+    });
+}
+
 // 為所有卡片添加動畫
 document.querySelectorAll('.feature-card, .course-card, .vehicle-card, .exam-card, .medical-card, .video-card, .contact-item').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
+});
+
+// 點擊選單外側關閉選單
+document.addEventListener('click', function(e) {
+    const navMenu = document.querySelector('.nav-menu');
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    
+    if (navMenu && hamburgerMenu && !navMenu.contains(e.target) && !hamburgerMenu.contains(e.target)) {
+        navMenu.classList.remove('open');
+        hamburgerMenu.classList.remove('open');
+    }
+});
+
+// 滾動時自動關閉選單
+window.addEventListener('scroll', function() {
+    const navMenu = document.querySelector('.nav-menu');
+    if (navMenu) {
+        navMenu.classList.remove('open');
+        hamburgerMenu?.classList.remove('open');
+    }
 });
 
