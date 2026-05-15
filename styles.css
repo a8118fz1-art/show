@@ -1425,15 +1425,18 @@ body {
 
 /* 開啟狀態 — SVG 動畫：三線變 X */
 .hamburger-menu.open .line-top {
+    transform-origin: 12px 6px;
     transform: translateY(6px) rotate(45deg);
 }
 
 .hamburger-menu.open .line-mid {
     opacity: 0;
     transform: scaleX(0);
+    transform-origin: 12px 12px;
 }
 
 .hamburger-menu.open .line-bot {
+    transform-origin: 12px 18px;
     transform: translateY(-6px) rotate(-45deg);
 }
 
